@@ -12,7 +12,10 @@ POS_RATIO = 0.03
 
 def initialize():
 	print("Clear previous samples")
-	shutil.rmtree('Samples')
+	try:
+		shutil.rmtree('Samples')
+	except FileNotFoundError:
+		pass
 	os.mkdir('Samples')
 	print('New folder generated')
 
